@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* JMJ Engineering Works Design System - Professional Aerospace Industrial Design
+All colors MUST be HSL. Sharp, angular design with no curves.
+Primary: #d97600 (Orange) | Pastels | White
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 15%;
+    
+    /* Primary Orange (#d97600) */
+    --primary: 28 100% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 28 100% 65%;
+    --primary-dark: 28 100% 30%;
+    
+    /* Pastel Palette */
+    --pastel-blue: 210 50% 92%;
+    --pastel-blue-foreground: 220 15% 25%;
+    --pastel-mint: 160 50% 92%;
+    --pastel-mint-foreground: 160 15% 25%;
+    --pastel-lavender: 270 50% 94%;
+    --pastel-lavender-foreground: 270 15% 25%;
+    --pastel-peach: 25 50% 92%;
+    --pastel-peach-foreground: 25 15% 25%;
+    
+    /* Professional Grays */
+    --gray-50: 220 20% 98%;
+    --gray-100: 220 15% 95%;
+    --gray-200: 220 15% 90%;
+    --gray-300: 220 15% 80%;
+    --gray-400: 220 15% 60%;
+    --gray-500: 220 15% 45%;
+    --gray-600: 220 15% 35%;
+    --gray-700: 220 15% 25%;
+    --gray-800: 220 15% 15%;
+    --gray-900: 220 15% 8%;
+
+    /* Component Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 15% 15%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 15% 45%;
+    --accent: 28 100% 42%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 15% 90%;
+    --input: 220 15% 95%;
+    --ring: 28 100% 42%;
+    
+    /* Industrial Shadows */
+    --shadow-sharp: 0 4px 0 0 hsl(var(--primary-dark));
+    --shadow-industrial: 0 8px 0 0 hsl(220 15% 80%), 0 8px 16px -4px hsl(220 15% 25% / 0.1);
+    --shadow-elevated: 0 12px 0 0 hsl(220 15% 70%), 0 12px 24px -8px hsl(220 15% 25% / 0.15);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-industrial: linear-gradient(180deg, hsl(var(--gray-50)), hsl(var(--gray-100)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+
+    --radius: 0rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode for professional industrial look */
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 95%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 15% 70%;
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 28 100% 42%;
+    
+    /* Dark mode gradients */
+    --gradient-industrial: linear-gradient(180deg, hsl(220 15% 12%), hsl(220 15% 8%));
+    --shadow-sharp: 0 4px 0 0 hsl(28 100% 25%);
+    --shadow-industrial: 0 8px 0 0 hsl(220 15% 5%), 0 8px 16px -4px hsl(0 0% 0% / 0.3);
+  }
+  
+  /* Cinematic Typography System */
+  .font-industrial {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  .font-technical {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  
+  .text-mega {
+    font-size: clamp(4rem, 15vw, 12rem);
+    line-height: 0.85;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+  
+  .text-cinematic {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 0.9;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-dramatic {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    line-height: 1.1;
+    font-weight: 600;
+  }
+  
+  /* Sharp Geometric Elements */
+  .clip-polygon-hero {
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+  }
+  
+  .clip-polygon-section {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 5% 100%, 0 100%);
+  }
+  
+  .clip-polygon-card {
+    clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
